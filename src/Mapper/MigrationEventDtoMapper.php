@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class MigrationEventDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'system_name' => 'systemName', 'from_version' => 'fromVersion', 'to_version' => 'toVersion', 'started_at' => 'startedAt', 'finished_at' => 'finishedAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'system_name' => 'systemName', 'from_version' => 'fromVersion', 'to_version' => 'toVersion', 'status' => 'status', 'started_at' => 'startedAt', 'finished_at' => 'finishedAt', 'error' => 'error', 'meta' => 'meta' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
