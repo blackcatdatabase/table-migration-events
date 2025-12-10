@@ -5,15 +5,15 @@ Records describing migrations between schema versions.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
+| error | TEXT | YES |  | Failure message, if any. |
+| finished_at | DATETIME(6) | YES |  | Completion timestamp (UTC). |
 | from_version | VARCHAR(64) | YES |  | Version migrated from. |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| system_name | VARCHAR(120) | NO |  | System/component undergoing migration. |
-| to_version | VARCHAR(64) | NO |  | Target version. |
-| status | mysql: ENUM('pending','running','done','failed','cancelled') / postgres: TEXT | NO | pending | Migration status. (enum: pending, running, done, failed, cancelled) |
-| finished_at | DATETIME(6) | YES |  | Completion timestamp (UTC). |
-| error | TEXT | YES |  | Failure message, if any. |
 | meta | mysql: JSON / postgres: JSONB | YES |  | JSON metadata or logs. |
 | started_at | DATETIME(6) | YES |  | Migration start timestamp (UTC). |
+| status | mysql: ENUM('pending','running','done','failed','cancelled') / postgres: TEXT | NO | pending | Migration status. (enum: pending, running, done, failed, cancelled) |
+| system_name | VARCHAR(120) | NO |  | System/component undergoing migration. |
+| to_version | VARCHAR(64) | NO |  | Target version. |
 
 ## Engine Details
 
