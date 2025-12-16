@@ -41,11 +41,11 @@ final class Criteria extends BaseCriteria
         return [ 'system_name', 'from_version', 'to_version', 'error' ];
     }
 
-/** Columns allowed in ORDER BY (falls back to filterable() when empty). */
-protected function sortable(): array
-{
-    return [ 'id', 'system_name', 'from_version', 'to_version', 'status', 'started_at', 'finished_at', 'error' ];
-}
+    /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
+    protected function sortable(): array
+    {
+        return [ 'id', 'system_name', 'from_version', 'to_version', 'status', 'started_at', 'finished_at', 'error' ];
+    }
 
     /**
      * Whitelist of joinable entities (for safe ->join() usage):
