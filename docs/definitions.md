@@ -5,15 +5,15 @@ Records describing migrations between schema versions.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| error | TEXT | YES |  | Failure message, if any. |
-| finished_at | DATETIME(6) | YES |  | Completion timestamp (UTC). |
-| from_version | VARCHAR(64) | YES |  | Version migrated from. |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| meta | JSON | YES |  | JSON metadata or logs. |
-| started_at | DATETIME(6) | YES |  | Migration start timestamp (UTC). |
-| status | ENUM('pending','running','done','failed','cancelled') | NO | pending | Migration status. (enum: pending, running, done, failed, cancelled) |
 | system_name | VARCHAR(120) | NO |  | System/component undergoing migration. |
+| from_version | VARCHAR(64) | YES |  | Version migrated from. |
 | to_version | VARCHAR(64) | NO |  | Target version. |
+| status | mysql: ENUM('pending','running','done','failed','cancelled') / postgres: TEXT | NO | pending | Migration status. (enum: pending, running, done, failed, cancelled) |
+| started_at | DATETIME(6) | YES |  | Migration start timestamp (UTC). |
+| finished_at | DATETIME(6) | YES |  | Completion timestamp (UTC). |
+| error | TEXT | YES |  | Failure message, if any. |
+| meta | mysql: JSON / postgres: JSONB | YES |  | JSON metadata or logs. |
 
 ## Engine Details
 
@@ -38,5 +38,5 @@ Indexes:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_migration_events | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
-| vw_migration_events | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_migration_events | mysql | algorithm=MERGE, security=INVOKER | [../schema/040_views.mysql.sql](../schema/040_views.mysql.sql) |
+| vw_migration_events | postgres |  | [../schema/040_views.postgres.sql](../schema/040_views.postgres.sql) |
