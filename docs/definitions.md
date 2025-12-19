@@ -3,17 +3,17 @@
 Records describing migrations between schema versions.
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| system_name | VARCHAR(120) | NO |  | System/component undergoing migration. |
-| from_version | VARCHAR(64) | YES |  | Version migrated from. |
-| to_version | VARCHAR(64) | NO |  | Target version. |
-| status | mysql: ENUM('pending','running','done','failed','cancelled') / postgres: TEXT | NO | pending | Migration status. (enum: pending, running, done, failed, cancelled) |
-| started_at | DATETIME(6) | YES |  | Migration start timestamp (UTC). |
-| finished_at | DATETIME(6) | YES |  | Completion timestamp (UTC). |
-| error | TEXT | YES |  | Failure message, if any. |
-| meta | mysql: JSON / postgres: JSONB | YES |  | JSON metadata or logs. |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| system_name | VARCHAR(120) | NO |  | System/component undergoing migration. |  |
+| from_version | VARCHAR(64) | YES |  | Version migrated from. |  |
+| to_version | mysql: VARCHAR(64) | NO |  | Target version. |  |
+| status | mysql: ENUM('pending','running','done','failed','cancelled') / postgres: TEXT | NO | pending | Migration status. (enum: pending, running, done, failed, cancelled) |  |
+| started_at | mysql: DATETIME(6) | YES |  | Migration start timestamp (UTC). |  |
+| finished_at | mysql: DATETIME(6) | YES |  | Completion timestamp (UTC). |  |
+| error | TEXT | YES |  | Failure message, if any. |  |
+| meta | mysql: JSON / postgres: JSONB | YES |  | JSON metadata or logs. |  |
 
 ## Engine Details
 

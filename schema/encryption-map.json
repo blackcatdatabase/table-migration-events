@@ -1,0 +1,35 @@
+{
+  "tables": {
+    "migration_events": {
+      "columns": {
+        "error": {
+          "strategy": "passthrough"
+        },
+        "finished_at": {
+          "strategy": "passthrough"
+        },
+        "from_version": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "meta": {
+          "strategy": "passthrough"
+        },
+        "started_at": {
+          "strategy": "passthrough"
+        },
+        "status": {
+          "strategy": "passthrough"
+        },
+        "system_name": {
+          "strategy": "passthrough"
+        },
+        "to_version": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
